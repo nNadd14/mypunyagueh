@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    body {
+      background-color: #000;
+    }
+
+    #intro, #main {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #intro {
+      background-color: #000;
+      color: #fff;
+      z-index: 2;
+    }
+
+    #intro button {
+      margin-top: 20px;
+      padding: 15px 25px;
+      font-size: 12px;
+      font-family: 'Press Start 2P', cursive;
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #fff;
+      cursor: pointer;
+      animation: blink 1.2s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    #main {
+      background-image: url('https://i.imgur.com/wYzJYTy.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      display: none;
+      text-align: center;
+    }
+
+    #main h1 {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      font-size: 14px;
+      text-shadow: 2px 2px 4px #000;
+      border: 2px solid #fff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #89CFF0;
+      }
+      to {
+        box-shadow: 0 0 20px #89CFF0, 0 0 30px #89CFF0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro screen -->
+  <div id="intro">
+    <div>Welcome</div>
+    <button onclick="startLove()">Klik untuk Lanjut</button>
+  </div>
+
+  <!-- Main screen -->
+  <div id="main">
+    <h1>MasyaAllah you are so cute</h1>
+  </div>
+
+  <script>
+    function startLove() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('main').style.display = 'flex';
+    }
+  </script>
+
+</body>
+</html>
